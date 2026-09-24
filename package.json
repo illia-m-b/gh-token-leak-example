@@ -1,0 +1,31 @@
+{
+  "name": "gh-token-leak-example",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Proof-of-concept demonstrating the necessity of registering sensitive tokens with core.setSecret() in custom GitHub Actions to prevent accidental log leaks.",
+  "license": "MIT",
+  "author": "Illia Brashkin",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@actions/core": "3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.2",
+    "generate-license-file": "4.2.5",
+    "tsup": "8.5.1",
+    "typescript": "5.9.3"
+  },
+  "packageManager": "pnpm@12.6.0",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.6.0",
+      "onFail": "error"
+    }
+  }
+}

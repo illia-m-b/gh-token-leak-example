@@ -1,0 +1,14 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 Illia Brashkin
+# SPDX-License-Identifier: MIT
+
+version = 1
+[[annotations]]
+path = [
+    "**.json",
+    "**.md",
+    "pnpm-lock.yaml",
+    ".gitignore",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "Copyright (c) 2026 Illia Brashkin"
+SPDX-License-Identifier = "MIT"

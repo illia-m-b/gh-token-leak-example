@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 Illia Brashkin
+# SPDX-License-Identifier: MIT
+---
+name: dogfooding
+'on':
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  dogfooding:
+    name: '(should-mask: ${{ matrix.should-mask }})'
+    timeout-minutes: 15
+    strategy:
+      matrix:
+        should-mask: ['true', 'false']
+    runs-on: ubuntu-slim
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./
+        with:
+          github-token: ghp_EXAMPLETOKEN1234567890abcdefghijklm
+          should-mask: ${{ matrix.should-mask }}

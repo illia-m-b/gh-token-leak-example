@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 Illia Brashkin
+# SPDX-License-Identifier: MIT
+---
+name: gh-token-leak-example-action
+author: Illia Brashkin
+description: |
+  Proof-of-concept demonstrating why custom GitHub Actions must register
+  sensitive tokens with core.setSecret() to ensure log masking and prevent
+  accidental credential exposure.
+inputs:
+  github-token:
+    description: |
+      GitHub Token or credential to test masking behavior against.
+    required: true
+  should-mask:
+    description: |
+      Boolean indicator whether `github-token` should be masked with
+      `core.setSecret()`.
+    required: true
+runs:
+  using: node24
+  main: dist/index.mjs
